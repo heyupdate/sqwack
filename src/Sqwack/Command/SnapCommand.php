@@ -62,6 +62,8 @@ class SnapCommand extends Command
 
         // Upload the photo
         $slack->uploadPhoto($photoPath);
+
+        $output->writeln(sprintf('<info>Uploaded new photo at %s</info>', date('H:i')));
     }
 
     protected function requestSlackCredentials(InputInterface $input, OutputInterface $output)

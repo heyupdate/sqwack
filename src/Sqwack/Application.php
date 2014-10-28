@@ -11,6 +11,7 @@ class Application extends BaseApplication
     {
         parent::__construct('Sqwack');
 
+        $this->add(new Commands\CronCommand());
         $this->add(new Commands\SnapCommand());
     }
 }
