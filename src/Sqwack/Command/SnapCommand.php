@@ -17,8 +17,6 @@ use Sqwack\Slack\SlackService;
 
 class SnapCommand extends Command
 {
-    protected $loginAttempts = 0;
-
     protected function configure()
     {
         $this->setName('snap');
