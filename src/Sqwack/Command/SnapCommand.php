@@ -56,9 +56,17 @@ class SnapCommand extends Command
 
         $capturer = new ImagesnapCapturer();
 
+        if ($output->isVerbose()) {
+            $output->writeln('Capturing photo');
+        }
+
         // Capture the photo
         $photoPath = $homeDir . '/photo.png';
         $capturer->capture($photoPath, 2, $input->getOption('device'));
+
+        if ($output->isVerbose()) {
+            $output->writeln('Uploading photo');
+        }
 
         // Upload the photo
         $slack->uploadPhoto($photoPath);
