@@ -1,4 +1,8 @@
 {
+    "name": "heyupdate/sqwack",
+    "description": "Up to date Slack profile photos",
+    "keywords": ["phar", "slack", "imagesnap"],
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "~5.0",
         "symfony/console": "~2.5",
