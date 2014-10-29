@@ -13,6 +13,8 @@ makes this easy. Simply do:
 
     brew install imagesnap
 
+There are two ways to install Sqwack, using Composer or downloading a Phar binary.
+
 ### Using Composer
 
 Install globally with [Composer](https://getcomposer.org/doc/03-cli.md#global):
