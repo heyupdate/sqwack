@@ -24,7 +24,11 @@ Be sure to add `~/.composer/bin` to your `$PATH`.
 Run the command with your Slack team domain as the `-t` option
 (i.e. for https://team.slack.com we would use "team")
 
-    ./bin/sqwack snap -t team
+    sqwack snap -t team
 
 Enter your Slack email and password. Once logged in your cookie will be saved in `~/.sqwack` so you
 don't need to keep entering your credentials.
+
+To continuously capture a new photo every few minutes use the `cron` command:
+
+    sqwack cron -t team
