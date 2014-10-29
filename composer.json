@@ -23,5 +23,8 @@
             "dev-master": "0.1-dev"
         }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "bin": ["sqwack"]
 }
