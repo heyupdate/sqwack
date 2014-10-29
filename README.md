@@ -11,7 +11,7 @@ when you finish work to save embarrassment.
 ## Installation
 
 You'll need ImageSnap installed. [Homebrew](http://mxcl.github.com/homebrew/)
-makes this easy. Simply do:
+makes this easy.
 
     brew install imagesnap
 
@@ -29,7 +29,7 @@ To update you can then use:
 
 Be sure to add `~/.composer/vendor/bin` to your `$PATH`.
 
-### Using the Phar archive
+### Download the Phar binary
 
 Download the `sqwack.phar` binary from the latest release.
 
