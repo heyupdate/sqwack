@@ -9,9 +9,15 @@ makes this easy. Simply do:
 
     brew install imagesnap
 
-Install the dependencies with [Composer]([http://getcomposer.org]):
+Install globally with [Composer]([https://getcomposer.org/doc/03-cli.md#global]):
 
-    composer install
+    composer global require 'heyupdate/sqwack=~0.1'
+
+To update you can then use:
+
+    composer global update
+
+Be sure to add `~/.composer/bin` to your `$PATH`.
 
 ## Snap a photo
 
