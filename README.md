@@ -1,10 +1,12 @@
 # Sqwack
 
-We’re big fans of [Slack](http://www.slack.com) and [Sqwiggle](http://www.sqwiggle.com).
-
-This is our attempt to implement Sqwiggle style *semi-realtime* profile photos in Slack.
+Semi-realtime profile photos in Slack.
 
 Take a photo from your webcam every few minutes and automagically update your Slack profile photo!
+
+We’re big fans of [Slack](http://www.slack.com) and [Sqwiggle](http://www.sqwiggle.com), but this is
+is no way affiliated with either organisation. Use at your own risk and remember to turn it off
+when you finish work to save embarrassment.
 
 ## Installation
 
