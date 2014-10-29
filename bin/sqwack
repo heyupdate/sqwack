@@ -10,5 +10,5 @@ if (file_exists($a = __DIR__ . '/../../../autoload.php')) {
 
 use Sqwack\Application;
 
-$application = new Application();
+$application = new Application('Sqwack by HeyUpdate', '@git-version@');
 $application->run();

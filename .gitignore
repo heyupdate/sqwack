@@ -1,2 +1,4 @@
-/vendor
+/box.json
 /composer.lock
+/sqwack.phar
+/vendor

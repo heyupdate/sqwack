@@ -7,9 +7,9 @@ use Symfony\Component\Console\Application as BaseApplication;
 
 class Application extends BaseApplication
 {
-    public function __construct()
+    public function __construct($name, $version)
     {
-        parent::__construct('Sqwack');
+        parent::__construct($name, $version);
 
         $this->add(new Commands\CronCommand());
         $this->add(new Commands\SnapCommand());

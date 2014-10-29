@@ -17,7 +17,7 @@ To update you can then use:
 
     composer global update
 
-Be sure to add `~/.composer/bin` to your `$PATH`.
+Be sure to add `~/.composer/vendor/bin` to your `$PATH`.
 
 ## Snap a photo
 

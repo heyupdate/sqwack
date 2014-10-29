@@ -1,0 +1,22 @@
+{
+    "main": "bin/sqwack",
+    "chmod": "0755",
+    "directories": [
+        "src",
+        "vendor"
+    ],
+    "files": [
+        "LICENSE"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests"],
+            "in": "vendor"
+        }
+    ],
+    "git-commit": "git-commit",
+    "git-version": "git-version",
+    "output": "sqwack.phar",
+    "stub": true
+}

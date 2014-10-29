@@ -30,7 +30,7 @@ class SnapCommand extends Command
         // Store cookies and captured images in the home directory
         $homeDir = $_SERVER['HOME'] . '/.sqwack';
         if (!is_dir($homeDir)) {
-            mkdir($homeDir, 777, true);
+            mkdir($homeDir, 0777, true);
         }
 
         $team = $input->getOption('team');
@@ -62,14 +62,27 @@ class SnapCommand extends Command
 
         // Capture the photo
         $photoPath = $homeDir . '/photo.png';
-        $capturer->capture($photoPath, 2, $input->getOption('device'));
+
+        try {
+            $capturer->capture($photoPath, 2, $input->getOption('device'));
+        } catch (\Exception $exception) {
+            $output->writeln('<error>Unable to capture new photo</error>');
+
+            return;
+        }
 
         if ($output->isVerbose()) {
             $output->writeln('Uploading photo');
         }
 
-        // Upload the photo
-        $slack->uploadPhoto($photoPath);
+        try {
+            // Upload the photo
+            $slack->uploadPhoto($photoPath);
+        } catch (\Exception $exception) {
+            $output->writeln('<error>Unable to upload new photo</error>');
+
+            return;
+        }
 
         $output->writeln(sprintf('<info>Uploaded new photo at %s</info>', date('H:i')));
     }
