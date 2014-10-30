@@ -23,7 +23,7 @@ class CronCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $waitMinutes = $this->getOption('sleep');
+        $waitMinutes = $input->getOption('sleep');
         if (!$waitMinutes) {
             $waitMinutes = 3;
         }
