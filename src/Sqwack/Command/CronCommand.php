@@ -5,6 +5,7 @@ namespace Sqwack\Command;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\FileCookieJar;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -28,8 +29,23 @@ class CronCommand extends Command
             $waitMinutes = 3;
         }
 
+
+        $snapOptions = array(
+            'command' => 'snap'
+        );
+
+        if ($input->getOption('device')) {
+            $snapOptions['--device'] = $input->getOption('device');
+        }
+
+        if ($input->getOption('team')) {
+            $snapOptions['--team'] = $input->getOption('team');
+        }
+
+        $snapInput = new ArrayInput($snapOptions);
+
         while (true) {
-            $this->getApplication()->find('snap')->run($input, $output);
+            $this->getApplication()->run($snapInput, $output);
 
             // Wait between snaps
             sleep(60 * $waitMinutes);
