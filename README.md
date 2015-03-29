@@ -64,3 +64,7 @@ To continuously capture a new photo every few minutes use the `cron` command:
 Get help by running:
 
     sqwack --help
+
+## Developers
+
+Check this [github project wiki](https://github.com/heyupdate/sqwack/wiki)
