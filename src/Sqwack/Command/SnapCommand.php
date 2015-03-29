@@ -23,6 +23,7 @@ class SnapCommand extends Command
 
         $this->addOption('device', 'd', InputOption::VALUE_REQUIRED, 'The name of camera to use. Use `imagesnap -l` to find a list of available devices.');
         $this->addOption('team', 't', InputOption::VALUE_REQUIRED, 'The team domain, e.g. "test" if you access Slack on https://test.slack.com.');
+        $this->addOption('slack-app-open', 'a', InputOption::VALUE_OPTIONAL, "Don't snap if Slack.app is not running. Default to 0.");
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -36,6 +37,17 @@ class SnapCommand extends Command
         $team = $input->getOption('team');
         if (!$team) {
             throw new \InvalidArgumentException('The team domain option --team must be provided');
+        }
+
+        if ($input->getOption('slack-app-open')) {
+            $exec_result=null;
+            // Next command tries to see if Slack.app is running, if so, we get back a 1 with some spaces as a result
+            // if not we get back a 0 with some spaces before
+            exec('ps aux | grep "[S]lack.app" | wc -l',$exec_result);
+            $slackapp_is_running = $exec_result[0]*1;
+            if(!$slackapp_is_running) {
+                $output->writeln('<error>slack-app-open option is set but Slack.app is not running</error>');
+            }
         }
 
         $client = new Client([
